@@ -106,13 +106,13 @@ DWORD WINAPI workthread(LPVOID arg)
 		SOCKADDR_IN clientaddr;
 		int addrlen = sizeof(clientaddr);
 		getpeername(client, (SOCKADDR*)&clientaddr, &addrlen);
-		printf("\n [TCP Server] Å¬¶óÀÌ¾ðÆ® Á¢¼Ó IP¹øÈ£ =%s,Æ÷Æ®¹øÈ£ =%d \n",
+		printf("\n [TCP Server] í´ë¼ì´ì–¸íŠ¸ ì ‘ì† IPë²ˆí˜¸ =%s,í¬íŠ¸ë²ˆí˜¸ =%d \n",
 			inet_ntoa(clientaddr.sin_addr), ntohs(clientaddr.sin_port));
 	    
 		SOCKETINFO *ptr = new SOCKETINFO;
 		if (ptr == NULL)
 		{
-			printf("¸Þ¸ð¸® ºÎÁ·");
+			printf("ë©”ëª¨ë¦¬ ë¶€ì¡±");
 			return 1;
 		}
 		ZeroMemory(&ptr->overlapped, sizeof(ptr->overlapped));
@@ -129,7 +129,7 @@ DWORD WINAPI workthread(LPVOID arg)
 	return 0;
 }
 
-void CALLBACK CmpletionRoutine(
+void CALLBACK CmpletionRoutine( //error occur line why?..
 	DWORD dwError, DWORD cbTransferred,
 	LPWSAOVERLAPPED ipoverlaaped, DWORD dwFlags)
 {
