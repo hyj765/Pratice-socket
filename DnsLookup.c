@@ -41,6 +41,6 @@ BOOL nslookup(char* DomainName, IN_ADDR* ip)
 		printf("gethostbyname error\n");
 		return FALSE;
 	}
-	memcpy_s(ip, sizeof(ip), dn->h_addr_list, sizeof(dn->h_length));
+	memcpy_s(ip, sizeof(ip), dn->h_addr_list, dn->h_length);
 	return TRUE;
 }
