@@ -31,7 +31,7 @@ int main() {
 		if (f == 0) {
 			break;
 		}
-		cout << f << "만큼 데이터를 입력 받음" << endl;
+		cout << f << "byte Data received" << endl;
 		cout << "server :" << buffer << endl;
 		fflush(stdout);
 	}
